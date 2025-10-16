@@ -1,15 +1,11 @@
-# crypto_price.py
-import requests
+# Kripto Fiyat Çekme Projesi
+Bu proje, CoinGecko API'sini kullanarak Bitcoin fiyatını çeken basit bir Python script'idir.
 
-def get_crypto_price(crypto_id="bitcoin"):
-    url = f"https://api.coingecko.com/api/v3/simple/price?ids={crypto_id}&vs_currencies=usd"
-    try:
-        response = requests.get(url)
-        data = response.json()
-        price = data[crypto_id]["usd"]
-        print(f"{crypto_id.capitalize()} fiyatı: ${price}")
-    except Exception as e:
-        print(f"Hata: {e}")
+## Kurulum
+1. Python 3.x kurulu olmalı.
+2. `requests` kütüphanesini yükleyin: `pip install requests`
+3. Script'i çalıştırın: `python crypto_price.py`
 
-if __name__ == "__main__":
-    get_crypto_price()
+## Kullanım
+- Script, Bitcoin'in USD cinsinden fiyatını gösterir.
+- Farklı bir kripto para için `get_crypto_price("ethereum")` gibi değiştirin.
